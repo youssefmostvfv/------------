@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>كوكب السعادة | Planet of Happiness</title>
+    <!-- Google Fonts: Cairo & Tajawal -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&amp;family=Tajawal:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6B3E26',
+                        secondary: '#D4A373',
+                        accent: '#FF7A00',
+                        warmBackground: '#FFF4E6',
+                        darkBrown: '#3A1F14',
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        tajawal: ['Tajawal', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style data-purpose="custom-animations">
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.4s ease-out forwards;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .sticky-tabs-active {
+            border-bottom: 3px solid #FF7A00;
+            color: #FF7A00;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="bg-warmBackground font-tajawal text-darkBrown selection:bg-secondary selection:text-white">
+    <!-- BEGIN: MainHeader -->
+    <header
+        class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-secondary/20 h-16 flex items-center px-4 justify-between">
+        <div class="flex items-center gap-2">
+            <div class="bg-primary p-2 rounded-full text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M21 15.546c0 1.569-1.286 2.842-2.871 2.842-1.585 0-2.871-1.273-2.871-2.842s1.286-2.842 2.871-2.842c1.585 0 2.871 1.273 2.871 2.842zM12 18.289c0 1.569-1.286 2.842-2.871 2.842-1.585 0-2.871-1.273-2.871-2.842S7.544 15.447 9.129 15.447c1.585 0 2.871 1.273 2.871 2.842zM3 5.454C3 3.994 4.194 2.8 5.667 2.8h12.666C19.806 2.8 21 3.994 21 5.454v7.273c0 1.46-1.194 2.654-2.667 2.654H5.667C4.194 15.381 3 14.187 3 12.727V5.454z"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+            </div>
+            <h1 class="font-cairo font-bold text-lg text-primary">كوكب السعادة</h1>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="p-2 hover:bg-secondary/10 rounded-full transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2"></path>
+                </svg>
+            </button>
+            <button class="relative p-2 hover:bg-secondary/10 rounded-full transition-colors" onclick="toggleCart()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2"></path>
+                </svg>
+                <span
+                    class="absolute top-1 right-1 bg-accent text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold hidden"
+                    id="cart-badge">0</span>
+            </button>
+        </div>
+    </header>
+    <!-- END: MainHeader -->
+    <!-- BEGIN: HeroSection -->
+    <section class="relative h-[400px] flex items-center justify-center text-center px-6 overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center z-0 scale-105 transition-transform duration-[20s] ease-linear hover:scale-110"
+            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBSBBmPmzC3pucQB1WBt5tYG5O0xWgwjIvUcBE48D16OkOfuEVs91NUFMBW9dDJgP8JHdqZWbVEX-_753JGd6L8nYCJSAYuQAompBjV6ncaWclT-jcohGk_o2K_mwlz_BfdKpZL84H0ksBzBblnbJmHHWNDcnd2WaHUvuDbphgnQSV6vlYnOyw1WOOGjy4Ek5Lblp4ootls5-QJk_i-zyt3X_DRwAA3wq3jmisZhxztVfOAF_E0F_P_AAwfEWj1SAR4XlkbV2v0ZQ');">
+        </div>
+        <div class="absolute inset-0 bg-darkBrown/40 backdrop-blur-[2px] z-10"></div>
+        <div class="relative z-20 w-full max-w-lg animate-slide-up">
+            <span class="bg-accent text-white px-3 py-1 rounded-full text-xs font-bold mb-4 inline-block shadow-lg">خصم
+                20% على أول طلب</span>
+            <h2 class="text-white font-cairo text-4xl font-bold mb-6 drop-shadow-md">أفضل الحلويات الطازجة</h2>
+            <div class="relative mb-6">
+                <input
+                    class="w-full py-4 px-6 pr-12 rounded-2xl border-none shadow-xl focus:ring-2 focus:ring-accent text-sm"
+                    placeholder="عن ماذا تبحث اليوم؟" type="text" />
+                <svg class="w-5 h-5 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" fill="none"
+                    stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2"></path>
+                </svg>
+            </div>
+            <a class="bg-accent hover:bg-accent/90 text-white font-bold py-3 px-8 rounded-xl transition-all shadow-lg active:scale-95 inline-block"
+                href="#menu">تصفح القائمة</a>
+        </div>
+    </section>
+    <!-- END: HeroSection -->
+    <!-- BEGIN: CategoryQuickLinks -->
+    <section class="px-4 -mt-10 relative z-30 mb-8">
+        <div class="flex gap-3 overflow-x-auto no-scrollbar pb-4">
+            <a href="#chocolate-waffle"
+                class="min-w-[100px] h-[100px] bg-white rounded-2xl shadow-md flex flex-col items-center justify-center gap-2 flex-shrink-0 border border-secondary/10 group active:scale-95 transition-transform cursor-pointer">
+                <img alt="وافل" class="w-10 h-10 object-cover rounded-full group-hover:rotate-12 transition-transform"
+                    src="./وافل-نوتيلا.webp" />
+                <span class="text-[10px] font-bold text-primary">وافل شيكولاته</span>
+            </a>
+            <a href="#nut-waffle"
+                class="min-w-[100px] h-[100px] bg-white rounded-2xl shadow-md flex flex-col items-center justify-center gap-2 flex-shrink-0 border border-secondary/10 group active:scale-95 transition-transform cursor-pointer">
+                <img alt="مكسرات" class="w-10 h-10 object-cover rounded-full group-hover:rotate-12 transition-transform"
+                    src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdhamZsZSUyMHdpdGglMjBudXRzfGVufDB8fDB8fHww" />
+                <span class="text-[10px] font-bold text-primary">وافل مكسرات</span>
+            </a>
+            <a href="#planet-casserole"
+                class="min-w-[100px] h-[100px] bg-white rounded-2xl shadow-md flex flex-col items-center justify-center gap-2 flex-shrink-0 border border-secondary/10 group active:scale-95 transition-transform cursor-pointer">
+                <img alt="طاجن" class="w-10 h-10 object-cover rounded-full group-hover:rotate-12 transition-transform"
+                    src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGVzc2VydCUyMGN1cHxlbnwwfHwwfHx8MA%3D%3D" />
+                <span class="text-[10px] font-bold text-primary">طاجن الكوكب</span>
+            </a>
+            <a href="#fruit-waffle"
+                class="min-w-[100px] h-[100px] bg-white rounded-2xl shadow-md flex flex-col items-center justify-center gap-2 flex-shrink-0 border border-secondary/10 group active:scale-95 transition-transform cursor-pointer">
+                <img alt="فواكه" class="w-10 h-10 object-cover rounded-full group-hover:rotate-12 transition-transform"
+                    src="https://images.unsplash.com/photo-1543157145-f78c636d003d?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGZydWl0JTIwd2FmZmxlfGVufDB8fDB8fHww" />
+                <span class="text-[10px] font-bold text-primary">وافل فواكة</span>
+            </a>
+            <a href="#fruit-ice-roll"
+                class="min-w-[100px] h-[100px] bg-white rounded-2xl shadow-md flex flex-col items-center justify-center gap-2 flex-shrink-0 border border-secondary/10 group active:scale-95 transition-transform cursor-pointer">
+                <img alt="ايس رول"
+                    class="w-10 h-10 object-cover rounded-full group-hover:rotate-12 transition-transform"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxEDGntgrmbtNQLFualBgpeuyytbIdcFynGJCj8QkknVKQ2v9849dtld_WqEHrMBLC-AI2Gk76I7SxyoDax2f8UDL0R-PtvD1oKrt33x2p65HVErskpmER1dHkbZ2wRU7eDxrbWqUbToF78iNhJfaa2x916Zctkhf8FEfUKiw8cb2MEc_s3qpmDF7u0YZkrhvlpmJkbtwXLUREMz-v8QC7481MyXRrzzX-PvgrgjHw1jf_6Vz40_YC5-qG9tstL2hXvgE40ODP7Q" />
+                <span class="text-[10px] font-bold text-primary">ايس رول فواكه</span>
+            </a>
+            <a href="#extra-sauce"
+                class="min-w-[100px] h-[100px] bg-white rounded-2xl shadow-md flex flex-col items-center justify-center gap-2 flex-shrink-0 border border-secondary/10 group active:scale-95 transition-transform cursor-pointer">
+                <img alt="صوص" class="w-10 h-10 object-cover rounded-full group-hover:rotate-12 transition-transform"
+                    src="https://images.unsplash.com/photo-1559839914-17aae19ceafl?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNob2NvbGF0ZSUyMHNhdWNlfGVufDB8fDB8fHww" />
+                <span class="text-[10px] font-bold text-primary">اكسترا صوص</span>
+            </a>
+        </div>
+    </section>
+    <!-- END: CategoryQuickLinks -->
+    <!-- BEGIN: StickyCategoryNav -->
+    <div class="sticky top-16 bg-white/95 backdrop-blur-sm z-40 border-b border-secondary/10 hidden" id="sticky-tabs">
+        <div class="flex overflow-x-auto no-scrollbar px-4 py-3 gap-6">
+            <a class="whitespace-nowrap text-sm font-medium text-gray-500 transition-colors py-1"
+                href="#chocolate-waffle">وافل شيكولاته</a>
+            <a class="whitespace-nowrap text-sm font-medium text-gray-500 transition-colors py-1"
+                href="#nut-waffle">وافل مكسرات</a>
+            <a class="whitespace-nowrap text-sm font-medium text-gray-500 transition-colors py-1"
+                href="#planet-casserole">طاجن الكوكب</a>
+            <a class="whitespace-nowrap text-sm font-medium text-gray-500 transition-colors py-1"
+                href="#fruit-waffle">وافل فواكة</a>
+            <a class="whitespace-nowrap text-sm font-medium text-gray-500 transition-colors py-1"
+                href="#fruit-ice-roll">ايس رول فواكه</a>
+            <a class="whitespace-nowrap text-sm font-medium text-gray-500 transition-colors py-1"
+                href="#chocolate-ice-roll">ايس رول شيكولاته</a>
+            <a class="whitespace-nowrap text-sm font-medium text-gray-500 transition-colors py-1" href="#pancake">بان
+                كيك</a>
+            <a class="whitespace-nowrap text-sm font-medium text-gray-500 transition-colors py-1"
+                href="#qashtouta">القشطوطة</a>
+            <a class="whitespace-nowrap text-sm font-medium text-gray-500 transition-colors py-1"
+                href="#rice-pudding">رز بلبن</a>
+            <a class="whitespace-nowrap text-sm font-medium text-gray-500 transition-colors py-1"
+                href="#extra-sauce">اكسترا صوص</a>
+        </div>
+    </div>
+    <!-- END: StickyCategoryNav -->
+    <main class="pb-32" id="menu">
+        <!-- BEGIN: ChocolateWaffleSection -->
+        <section class="mb-10 animate-slide-up" id="chocolate-waffle" style="animation-delay: 0.1s;">
+            <div class="px-4 flex justify-between items-end mb-4">
+                <h3 class="font-cairo text-2xl font-bold border-r-4 border-accent pr-3 text-primary">وافل شيكولاته</h3>
+                <span class="text-[10px] text-gray-400">17 صنف</span>
+            </div>
+            <div class="flex overflow-x-auto no-scrollbar px-4 gap-4 pb-4">
+                <!-- 17 Items from Image 2 -->
+                <script>
+                    const chocolateWaffles = [
+                        { name: 'وافل نوتيلا', price: 30, img: './وافل-نوتيلا.webp' },
+                        { name: 'وافل وايت', price: 30, img: './وافل-وايتwebp.webp' },
+                        { name: 'وافل نوتيلا وايت', price: 35, img: './وافل-نوتيلا-وايت.webp' },
+                        { name: 'وافل كراميل', price: 30, img: './وافل-كريميل.webp' },
+                        { name: 'وافل لوتس', price: 40, img: './وافل-لوتس.webp' },
+                        { name: 'وافل اوريو', price: 40, img: './وافل-أوريو.webp' },
+                        { name: 'وافل بوريو', price: 40, img: './وافل-بوريو.webp' },
+                        { name: 'وافل هوهوز', price: 40, img: './وافل-هوهوز.webp' },
+                        { name: 'وافل سنيكرز', price: 40, img: './وافل-سنيكرز.webp' },
+                        { name: 'وافل جالاكسي', price: 50, img: './وافل-جالاكسي.webp' },
+                        { name: 'وافل كيت كات', price: 50, img: './وافل-كيت-كات.webp' },
+                        { name: 'وافل مورو', price: 50, img: './وافل-مورو.webp' },
+                        { name: 'وافل مندولين', price: 50, img: './وافل-مندولين.webp' },
+                        { name: 'وافل توينكز', price: 50, img: './وافل-توينكز.webp' },
+                        { name: 'وافل صوص مانجا', price: 30, img: './وافل-صوص-مانجا.webp' },
+                        { name: 'وافل صوص فراولة', price: 30, img: './وافل-صوص-فراولة.webp' },
+                        { name: 'وافل دبى', price: 35, img: './وافل-دبى.webp' }
+                    ];
+                    document.write(chocolateWaffles.map(item => `
+  <div class="min-w-[150px] bg-white rounded-2xl overflow-hidden shadow-sm relative group border border-secondary/5 flex-shrink-0">
+    <img alt="${item.name}" class="w-full h-24 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" src="${item.img || './kawkap-logo.webp'}" onerror="this.onerror=null; this.src='./kawkap-logo.webp';">
+    <div class="p-2">
+      <h4 class="font-bold text-[10px] mb-1 truncate">${item.name}</h4>
+      <div class="flex justify-between items-center">
+        <span class="text-accent font-bold text-[10px]">${item.price} ج.م</span>
+        <button class="bg-primary text-white w-6 h-6 rounded-lg flex items-center justify-center hover:bg-darkBrown transition-colors active:scale-90" onclick="openModal('${item.name}', ${item.price})">
+          <svg class="h-4 w-4" fill="currentColor" viewbox="0 0 20 20"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+`).join(''));
+                </script>
+            </div>
+        </section>
+        <!-- END: ChocolateWaffleSection -->
+
+        <!-- BEGIN: NutWaffleSection -->
+        <section class="mb-10 animate-slide-up" id="nut-waffle" style="animation-delay: 0.2s;">
+            <div class="px-4 flex justify-between items-end mb-4">
+                <h3 class="font-cairo text-2xl font-bold border-r-4 border-accent pr-3 text-primary">وافل مكسرات</h3>
+                <span class="text-[10px] text-gray-400">5 أصناف</span>
+            </div>
+            <div class="flex overflow-x-auto no-scrollbar px-4 gap-4 pb-4">
+                <!-- 5 Items from Image 2 -->
+                <script>
+                    const nutWaffles = [
+                        { name: 'وافل لوز', price: 70, img: './وافل-لوز.webp' },
+                        { name: 'وافل بندق', price: 70, img: './وافل-بندق.webp' },
+                        { name: 'وافل كاجو', price: 70, img: './وافل-كافو.webp' },
+                        { name: 'وافل عين جمل', price: 70, img: './وافل-عين-جمل.webp' },
+                        { name: 'وافل ميكس مكسرات', price: 80, img: './وافل-ميكس-مكسرات.webp' }
+                    ];
+                    document.write(nutWaffles.map(item => `
+  <div class="min-w-[150px] bg-white rounded-2xl overflow-hidden shadow-sm relative group border border-secondary/5 flex-shrink-0">
+    <img alt="${item.name}" class="w-full h-24 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" src="${item.img || './kawkap-logo.webp'}" onerror="this.onerror=null; this.src='./kawkap-logo.webp';">
+    <div class="p-2">
+      <h4 class="font-bold text-[10px] mb-1 truncate">${item.name}</h4>
+      <div class="flex justify-between items-center">
+        <span class="text-accent font-bold text-[10px]">${item.price} ج.م</span>
+        <button class="bg-primary text-white w-6 h-6 rounded-lg flex items-center justify-center hover:bg-darkBrown transition-colors active:scale-90" onclick="openModal('${item.name}', ${item.price})">
+          <svg class="h-4 w-4" fill="currentColor" viewbox="0 0 20 20"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+`).join(''));
+                </script>
+            </div>
+        </section>
+        <!-- END: NutWaffleSection -->
+
+        <!-- BEGIN: PlanetCasseroleSection -->
+        <section class="mb-10 animate-slide-up" id="planet-casserole" style="animation-delay: 0.3s;">
+            <div class="px-4 flex justify-between items-end mb-4">
+                <h3 class="font-cairo text-2xl font-bold border-r-4 border-accent pr-3 text-primary">طاجن الكوكب</h3>
+                <span class="text-[10px] text-gray-400">9 أصناف</span>
+            </div>
+            <div class="flex overflow-x-auto no-scrollbar px-4 gap-4 pb-4">
+                <!-- 9 Items from Image 2 -->
+                <script>
+                    const planetCasseroles = [
+                        { name: 'طاجن كوكب ك', price: 115, img: './طاجن-كوكب-ك.webp' },
+                        { name: 'طاجن المدلع', price: 80, img: './طاجن-مدلع.webp' },
+                        { name: 'طاجن كوكب برو', price: 55, img: './طاجن-كوكب-برو.webp' },
+                        { name: 'كب كيك صوصات', price: 60, img: './كب-كيك-صوصات.webp' },
+                        { name: 'كب كيك اضافات', price: 70, img: './كب-كيك-إضافات.webp' },
+                        { name: 'قطعة كب كيك', price: 15, img: './قطعة-كب-كيك.webp' },
+                        { name: 'كب موز', price: 25, img: './كب-موز.webp' },
+                        { name: 'كب مانجو', price: 30, img: './كب-مانجو.webp' },
+                        { name: 'كب تفاح', price: 30, img: './كب-تفاح.webp' }
+                    ];
+                    document.write(planetCasseroles.map(item => `
+  <div class="min-w-[150px] bg-white rounded-2xl overflow-hidden shadow-sm relative group border border-secondary/5 flex-shrink-0">
+    <img alt="${item.name}" class="w-full h-24 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" src="${item.img || './kawkap-logo.webp'}" onerror="this.onerror=null; this.src='./kawkap-logo.webp';">
+    <div class="p-2">
+      <h4 class="font-bold text-[10px] mb-1 truncate">${item.name}</h4>
+      <div class="flex justify-between items-center">
+        <span class="text-accent font-bold text-[10px]">${item.price} ج.م</span>
+        <button class="bg-primary text-white w-6 h-6 rounded-lg flex items-center justify-center hover:bg-darkBrown transition-colors active:scale-90" onclick="openModal('${item.name}', ${item.price})">
+          <svg class="h-4 w-4" fill="currentColor" viewbox="0 0 20 20"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+`).join(''));
+                </script>
+            </div>
+        </section>
+        <!-- END: PlanetCasseroleSection -->
+
+        <!-- BEGIN: FruitWaffleSection -->
+        <section class="mb-10 animate-slide-up" id="fruit-waffle" style="animation-delay: 0.4s;">
+            <div class="px-4 flex justify-between items-end mb-4">
+                <h3 class="font-cairo text-2xl font-bold border-r-4 border-accent pr-3 text-primary">وافل فواكة</h3>
+                <span class="text-[10px] text-gray-400">13 صنف</span>
+            </div>
+            <div class="flex overflow-x-auto no-scrollbar px-4 gap-4 pb-4">
+                <!-- 13 Items from Image 2 -->
+                <script>
+                    const fruitWaffles = [
+                        { name: 'وافل موز', price: 40 },
+                        { name: 'وافل مانجو', price: 50 },
+                        { name: 'وافل فراولة', price: 50 },
+                        { name: 'وافل تفاح', price: 45 },
+                        { name: 'وافل كيوى', price: 50 },
+                        { name: 'وافل كريز', price: 50 },
+                        { name: 'وافل قشطة مانجو', price: 75 },
+                        { name: 'وافل قشطة فراولة', price: 65 },
+                        { name: 'وافل ميكس صوصات', price: 40 },
+                        { name: 'وافل بلو بيرى', price: 40 },
+                        { name: 'وافل مارشميللو', price: 45 },
+                        { name: 'وافل كوكب السعادة', price: 75 },
+                        { name: 'وافل بيستاشيو', price: 65 }
+                    ];
+                    document.write(fruitWaffles.map(item => `
+  <div class="min-w-[150px] bg-white rounded-2xl overflow-hidden shadow-sm relative group border border-secondary/5 flex-shrink-0">
+    <img alt="${item.name}" class="w-full h-24 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" src="${item.img || './kawkap-logo.webp'}" onerror="this.onerror=null; this.src='./kawkap-logo.webp';">
+    <div class="p-2">
+      <h4 class="font-bold text-[10px] mb-1 truncate">${item.name}</h4>
+      <div class="flex justify-between items-center">
+        <span class="text-accent font-bold text-[10px]">${item.price} ج.م</span>
+        <button class="bg-primary text-white w-6 h-6 rounded-lg flex items-center justify-center hover:bg-darkBrown transition-colors active:scale-90" onclick="openModal('${item.name}', ${item.price})">
+          <svg class="h-4 w-4" fill="currentColor" viewbox="0 0 20 20"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+`).join(''));
+                </script>
+            </div>
+        </section>
+        <!-- END: FruitWaffleSection -->
+
+        <!-- BEGIN: FruitIceRollSection -->
+        <section class="mb-10 animate-slide-up" id="fruit-ice-roll" style="animation-delay: 0.5s;">
+            <div class="px-4 flex justify-between items-end mb-4">
+                <h3 class="font-cairo text-2xl font-bold border-r-4 border-accent pr-3 text-primary">ايس رول فواكه</h3>
+                <span class="text-[10px] text-gray-400">11 صنف</span>
+            </div>
+            <div class="flex overflow-x-auto no-scrollbar px-4 gap-4 pb-4">
+                <script>
+                    const fruitIceRolls = [
+                        { name: 'رول فانيليا', price: 35 },
+                        { name: 'رول كريز', price: 35 },
+                        { name: 'رول بطيخ', price: 35 },
+                        { name: 'رول خوخ', price: 35 },
+                        { name: 'رول موز', price: 35 },
+                        { name: 'رول اناناس', price: 35 },
+                        { name: 'رول مانجو', price: 35 },
+                        { name: 'رول برتقال', price: 35 },
+                        { name: 'رول كولا', price: 35 },
+                        { name: 'رول كيوي', price: 35 },
+                        { name: 'رول رمان', price: 35 }
+                    ];
+                    document.write(fruitIceRolls.map(item => `
+  <div class="min-w-[150px] bg-white rounded-2xl overflow-hidden shadow-sm relative group border border-secondary/5 flex-shrink-0">
+    <img alt="${item.name}" class="w-full h-24 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" src="${item.img || './kawkap-logo.webp'}" onerror="this.onerror=null; this.src='./kawkap-logo.webp';">
+    <div class="p-2">
+      <h4 class="font-bold text-[10px] mb-1 truncate">${item.name}</h4>
+      <div class="flex justify-between items-center">
+        <span class="text-accent font-bold text-[10px]">${item.price} ج.م</span>
+        <button class="bg-primary text-white w-6 h-6 rounded-lg flex items-center justify-center hover:bg-darkBrown transition-colors active:scale-90" onclick="openModal('${item.name}', ${item.price})">
+          <svg class="h-4 w-4" fill="currentColor" viewbox="0 0 20 20"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+`).join(''));
+                </script>
+            </div>
+        </section>
+        <!-- END: FruitIceRollSection -->
+
+        <!-- BEGIN: ChocolateIceRollSection -->
+        <section class="mb-10 animate-slide-up" id="chocolate-ice-roll" style="animation-delay: 0.6s;">
+            <div class="px-4 flex justify-between items-end mb-4">
+                <h3 class="font-cairo text-2xl font-bold border-r-4 border-accent pr-3 text-primary">ايس رول شيكولاته
+                </h3>
+                <span class="text-[10px] text-gray-400">7 أصناف</span>
+            </div>
+            <div class="flex overflow-x-auto no-scrollbar px-4 gap-4 pb-4">
+                <script>
+                    const chocolateIceRolls = [
+                        { name: 'كيت كات', price: 45 },
+                        { name: 'سنيكرز', price: 45 },
+                        { name: 'كادبوري', price: 45 },
+                        { name: 'نوتيلا', price: 45 },
+                        { name: 'بوريو', price: 45 },
+                        { name: 'اوريو', price: 45 },
+                        { name: 'لوتس', price: 45 }
+                    ];
+                    document.write(chocolateIceRolls.map(item => `
+  <div class="min-w-[150px] bg-white rounded-2xl overflow-hidden shadow-sm relative group border border-secondary/5 flex-shrink-0">
+    <img alt="${item.name}" class="w-full h-24 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" src="${item.img || './kawkap-logo.webp'}" onerror="this.onerror=null; this.src='./kawkap-logo.webp';">
+    <div class="p-2">
+      <h4 class="font-bold text-[10px] mb-1 truncate">${item.name}</h4>
+      <div class="flex justify-between items-center">
+        <span class="text-accent font-bold text-[10px]">${item.price} ج.م</span>
+        <button class="bg-primary text-white w-6 h-6 rounded-lg flex items-center justify-center hover:bg-darkBrown transition-colors active:scale-90" onclick="openModal('${item.name}', ${item.price})">
+          <svg class="h-4 w-4" fill="currentColor" viewbox="0 0 20 20"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+`).join(''));
+                </script>
+            </div>
+        </section>
+        <!-- END: ChocolateIceRollSection -->
+
+        <!-- BEGIN: PancakeSection -->
+        <section class="mb-10 animate-slide-up" id="pancake" style="animation-delay: 0.7s;">
+            <div class="px-4 flex justify-between items-end mb-4">
+                <h3 class="font-cairo text-2xl font-bold border-r-4 border-accent pr-3 text-primary">بان كيك</h3>
+                <span class="text-[10px] text-gray-400">4 أصناف</span>
+            </div>
+            <div class="flex overflow-x-auto no-scrollbar px-4 gap-4 pb-4">
+                <script>
+                    const pancakes = [
+                        { name: 'بوكس بان كيك 5 قطعة', price: 20 },
+                        { name: 'بوكس بان كيك 15 قطعة', price: 50 },
+                        { name: 'بوكس بان كيك 24 قطعة صوصات', price: 50 },
+                        { name: 'بوكس بان كيك 24 قطعة اضافات', price: 70 }
+                    ];
+                    document.write(pancakes.map(item => `
+  <div class="min-w-[150px] bg-white rounded-2xl overflow-hidden shadow-sm relative group border border-secondary/5 flex-shrink-0">
+    <img alt="${item.name}" class="w-full h-24 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" src="${item.img || './kawkap-logo.webp'}" onerror="this.onerror=null; this.src='./kawkap-logo.webp';">
+    <div class="p-2">
+      <h4 class="font-bold text-[10px] mb-1 truncate">${item.name}</h4>
+      <div class="flex justify-between items-center">
+        <span class="text-accent font-bold text-[10px]">${item.price} ج.م</span>
+        <button class="bg-primary text-white w-6 h-6 rounded-lg flex items-center justify-center hover:bg-darkBrown transition-colors active:scale-90" onclick="openModal('${item.name}', ${item.price})">
+          <svg class="h-4 w-4" fill="currentColor" viewbox="0 0 20 20"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+`).join(''));
+                </script>
+            </div>
+        </section>
+        <!-- END: PancakeSection -->
+
+        <!-- BEGIN: QashtoutaSection -->
+        <section class="mb-10 animate-slide-up" id="qashtouta" style="animation-delay: 0.8s;">
+            <div class="px-4 flex justify-between items-end mb-4">
+                <h3 class="font-cairo text-2xl font-bold border-r-4 border-accent pr-3 text-primary">القشطوطة</h3>
+                <span class="text-[10px] text-gray-400">21 صنف</span>
+            </div>
+            <div class="flex overflow-x-auto no-scrollbar px-4 gap-4 pb-4">
+                <script>
+                    const qashtoutas = [
+                        { name: 'قشطوطة نوتيلا', price: 40 },
+                        { name: 'قشطوطة وايت', price: 40 },
+                        { name: 'قشطوطة كراميل', price: 40 },
+                        { name: 'قشطوطة لوتس', price: 45 },
+                        { name: 'قشطوطة بستاشيو', price: 60 },
+                        { name: 'قشطوطة فراولة صوص', price: 40 },
+                        { name: 'قشطوطة مانجو صوص', price: 40 },
+                        { name: 'نوتيلا اوريو', price: 45 },
+                        { name: 'قشطوطة هوهوز', price: 45 },
+                        { name: 'قشطوطة مارشميللو', price: 45 },
+                        { name: 'قشطوطة لوتس بلجيكي', price: 45 },
+                        { name: 'قشطوطة فراولة فريش', price: 45 },
+                        { name: 'قشطوطة مانجو فريش', price: 45 },
+                        { name: 'قشطوطة كيوي فريش', price: 45 },
+                        { name: 'قشطوطة موز فريش', price: 45 },
+                        { name: 'قشطوطة ميكس مكسرات', price: 70 },
+                        { name: 'قشطوطة لوز', price: 60 },
+                        { name: 'قشطوطة بندق', price: 60 },
+                        { name: 'قشطوطة كاجو', price: 60 },
+                        { name: 'قشطوطة عين جمل', price: 60 },
+                        { name: 'قشطوطة كوكب السعادة', price: 80 }
+                    ];
+                    document.write(qashtoutas.map(item => `
+  <div class="min-w-[150px] bg-white rounded-2xl overflow-hidden shadow-sm relative group border border-secondary/5 flex-shrink-0">
+    <img alt="${item.name}" class="w-full h-24 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" src="${item.img || './kawkap-logo.webp'}" onerror="this.onerror=null; this.src='./kawkap-logo.webp';">
+    <div class="p-2">
+      <h4 class="font-bold text-[10px] mb-1 truncate">${item.name}</h4>
+      <div class="flex justify-between items-center">
+        <span class="text-accent font-bold text-[10px]">${item.price} ج.م</span>
+        <button class="bg-primary text-white w-6 h-6 rounded-lg flex items-center justify-center hover:bg-darkBrown transition-colors active:scale-90" onclick="openModal('${item.name}', ${item.price})">
+          <svg class="h-4 w-4" fill="currentColor" viewbox="0 0 20 20"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+`).join(''));
+                </script>
+            </div>
+        </section>
+        <!-- END: QashtoutaSection -->
+
+        <!-- BEGIN: RicePuddingSection -->
+        <section class="mb-10 animate-slide-up" id="rice-pudding" style="animation-delay: 0.9s;">
+            <div class="px-4 flex justify-between items-end mb-4">
+                <h3 class="font-cairo text-2xl font-bold border-r-4 border-accent pr-3 text-primary">رز بلبن</h3>
+                <span class="text-[10px] text-gray-400">16 صنف</span>
+            </div>
+            <div class="flex overflow-x-auto no-scrollbar px-4 gap-4 pb-4">
+                <script>
+                    const ricePuddings = [
+                        { name: 'رز بلبن ساده', price: 20 },
+                        { name: 'رز بلبن نوتيلا', price: 30 },
+                        { name: 'رز بلبن وايت', price: 30 },
+                        { name: 'رز بلبن مكسرات', price: 50 },
+                        { name: 'رز بلبن تفاح', price: 35 },
+                        { name: 'رز بلبن فراوله', price: 35 },
+                        { name: 'رز بلبن موز', price: 35 },
+                        { name: 'رز بلبن كيوي', price: 35 },
+                        { name: 'رز بلبن لوتس', price: 30 },
+                        { name: 'رز بلبن اوريو', price: 35 },
+                        { name: 'رز بلبن هوهوز', price: 35 },
+                        { name: 'رز بلبن بستاشيو', price: 50 },
+                        { name: 'رز بلبن مانجا', price: 50 },
+                        { name: 'رز بلبن ديبي', price: 50 },
+                        { name: 'رز بلبن لوتس', price: 30 },
+                        { name: 'رز بلبن ايس كريم', price: 40 }
+                    ];
+                    document.write(ricePuddings.map(item => `
+  <div class="min-w-[150px] bg-white rounded-2xl overflow-hidden shadow-sm relative group border border-secondary/5 flex-shrink-0">
+    <img alt="${item.name}" class="w-full h-24 object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" src="${item.img || './kawkap-logo.webp'}" onerror="this.onerror=null; this.src='./kawkap-logo.webp';">
+    <div class="p-2">
+      <h4 class="font-bold text-[10px] mb-1 truncate">${item.name}</h4>
+      <div class="flex justify-between items-center">
+        <span class="text-accent font-bold text-[10px]">${item.price} ج.م</span>
+        <button class="bg-primary text-white w-6 h-6 rounded-lg flex items-center justify-center hover:bg-darkBrown transition-colors active:scale-90" onclick="openModal('${item.name}', ${item.price})">
+          <svg class="h-4 w-4" fill="currentColor" viewbox="0 0 20 20"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+`).join(''));
+                </script>
+            </div>
+        </section>
+        <!-- END: RicePuddingSection -->
+
+        <!-- BEGIN: ExtraSauceSection -->
+        <section class="mb-10 animate-slide-up" id="extra-sauce" style="animation-delay: 1.0s;">
+            <div class="px-4 flex justify-between items-end mb-4">
+                <h3 class="font-cairo text-2xl font-bold border-r-4 border-accent pr-3 text-primary">اكسترا صوص</h3>
+                <span class="text-[10px] text-gray-400">5 أصناف</span>
+            </div>
+            <div class="flex overflow-x-auto no-scrollbar px-4 gap-4 pb-4">
+                <script>
+                    const extraSauces = [
+                        { name: 'كراميل', price: 10 },
+                        { name: 'شوكولاته', price: 10 },
+                        { name: 'شوكليت وايت', price: 10 },
+                        { name: 'بستاشيو', price: 10 },
+                        { name: 'فراوله', price: 10 }
+                    ];
+                    document.write(extraSauces.map(item => `
+  <div class="min-w-[120px] bg-white rounded-2xl p-3 shadow-sm border border-secondary/5 text-center group active:scale-95 transition-transform flex-shrink-0">
+    <h4 class="font-bold text-[10px] mb-2">${item.name}</h4>
+    <div class="flex justify-between items-center bg-warmBackground p-1 rounded-lg">
+      <span class="text-accent font-bold text-[10px]">${item.price} ج.م</span>
+      <button class="bg-primary text-white w-5 h-5 rounded flex items-center justify-center" onclick="addToCartDirect('${item.name}', ${item.price})">
+        <svg class="h-3 w-3" fill="currentColor" viewbox="0 0 20 20"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"></path></svg>
+      </button>
+    </div>
+  </div>
+`).join(''));
+                </script>
+            </div>
+        </section>
+        <!-- END: ExtraSauceSection -->
+    </main>
+    <!-- BEGIN: FloatingCartButton -->
+    <button
+        class="fixed bottom-6 left-6 z-50 bg-accent text-white p-4 rounded-full shadow-2xl flex items-center gap-2 animate-bounce active:scale-90 transition-transform"
+        onclick="toggleCart()">
+        <div class="relative">
+            <svg class="h-7 w-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+            </svg>
+            <span
+                class="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold"
+                id="cart-count-float">0</span>
+        </div>
+        <span class="font-bold hidden md:inline">سلة الطلبات</span>
+    </button>
+    <!-- END: FloatingCartButton -->
+    <!-- BEGIN: SlideCartDrawer -->
+    <div class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity" id="cart-overlay" onclick="toggleCart()">
+    </div>
+    <aside
+        class="fixed top-0 bottom-0 right-0 w-full max-w-[320px] bg-white z-[70] translate-x-full transition-transform duration-300 ease-in-out flex flex-col shadow-2xl"
+        id="side-cart">
+        <div class="p-4 border-b border-secondary/10 flex justify-between items-center bg-primary text-white">
+            <h3 class="font-cairo font-bold text-lg">سلة التسوق</h3>
+            <button class="p-1 hover:bg-white/10 rounded-full" onclick="toggleCart()">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <div class="flex-1 overflow-y-auto p-4 space-y-4" id="cart-items">
+            <!-- Items dynamically added here -->
+            <div class="text-center py-20 text-gray-400">
+                <svg class="h-12 w-12 mx-auto mb-4 opacity-20" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2"></path>
+                </svg>
+                <p>السلة فارغة حالياً</p>
+            </div>
+        </div>
+        <div class="p-4 bg-warmBackground border-t border-secondary/20">
+            <div class="flex justify-between items-center mb-4">
+                <span class="font-bold">الإجمالي:</span>
+                <span class="font-cairo text-accent text-xl font-bold" id="cart-total">0 ج.م</span>
+            </div>
+            <button
+                class="w-full bg-accent text-white py-3 rounded-xl font-bold text-lg shadow-lg active:scale-95 transition-transform"
+                onclick="showCheckout()">إتمام الطلب</button>
+        </div>
+    </aside>
+    <!-- END: SlideCartDrawer -->
+    <!-- BEGIN: ProductModal -->
+    <div class="fixed inset-0 z-[80] hidden items-center justify-center p-4" id="product-modal">
+        <div class="absolute inset-0 bg-black/60" onclick="closeModal()"></div>
+        <div class="relative bg-white w-full max-w-md rounded-3xl overflow-hidden shadow-2xl animate-slide-up">
+            <div class="p-6">
+                <h3 class="font-cairo text-2xl font-bold text-primary mb-2" id="modal-title">اسم المنتج</h3>
+                <p class="text-sm text-gray-500 mb-6">اختر الإضافات المفضلة لديك</p>
+                <div class="space-y-4">
+                    <div>
+                        <span class="block text-sm font-bold mb-3">الحجم:</span>
+                        <div class="flex gap-3">
+                            <label class="flex-1">
+                                <input checked="" class="hidden peer" name="size" type="radio" value="0" />
+                                <div
+                                    class="text-center py-2 border-2 border-secondary/20 rounded-xl peer-checked:border-accent peer-checked:bg-accent/5 transition-all text-sm font-bold">
+                                    وسط</div>
+                            </label>
+                            <label class="flex-1">
+                                <input class="hidden peer" name="size" type="radio" value="15" />
+                                <div
+                                    class="text-center py-2 border-2 border-secondary/20 rounded-xl peer-checked:border-accent peer-checked:bg-accent/5 transition-all text-sm font-bold">
+                                    كبير (+15)</div>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="block text-sm font-bold mb-3">إضافات ممتعة:</span>
+                        <div class="space-y-2">
+                            <label class="flex items-center justify-between p-3 border border-secondary/10 rounded-xl">
+                                <span class="text-sm">زيادة نوتيلا</span>
+                                <div class="flex items-center gap-3">
+                                    <span class="text-xs text-accent font-bold">+10 ج.م</span>
+                                    <input class="rounded text-accent focus:ring-accent" data-name="نوتيلا زيادة"
+                                        name="addon" type="checkbox" value="10" />
+                                </div>
+                            </label>
+                            <label class="flex items-center justify-between p-3 border border-secondary/10 rounded-xl">
+                                <span class="text-sm">أيس كريم بولا</span>
+                                <div class="flex items-center gap-3">
+                                    <span class="text-xs text-accent font-bold">+15 ج.م</span>
+                                    <input class="rounded text-accent focus:ring-accent" data-name="أيس كريم"
+                                        name="addon" type="checkbox" value="15" />
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <button
+                    class="w-full bg-primary text-white py-4 rounded-2xl font-bold mt-8 shadow-xl active:scale-95 transition-transform flex justify-between px-6"
+                    id="add-to-cart-btn">
+                    <span>أضف للسلة</span>
+                    <span id="modal-price">0 ج.م</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- END: ProductModal -->
+    <!-- BEGIN: CheckoutModal -->
+    <div class="fixed inset-0 z-[90] hidden items-center justify-center p-4" id="checkout-modal">
+        <div class="absolute inset-0 bg-black/60" onclick="closeCheckout()"></div>
+        <div class="relative bg-white w-full max-w-md rounded-3xl p-6 shadow-2xl overflow-y-auto max-h-[90vh]">
+            <h3 class="font-cairo text-2xl font-bold text-primary mb-6">بيانات التوصيل</h3>
+            <form class="space-y-4" id="order-form">
+                <div>
+                    <label class="block text-sm font-bold mb-1">الاسم بالكامل</label>
+                    <input class="w-full rounded-xl border-secondary/20 focus:ring-accent" id="cust-name"
+                        placeholder="مثال: أحمد محمد" required="" type="text" />
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-1">رقم الهاتف</label>
+                    <input class="w-full rounded-xl border-secondary/20 focus:ring-accent" id="cust-phone"
+                        placeholder="01xxxxxxxxx" required="" type="tel" />
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-1">العنوان بالتفصيل</label>
+                    <textarea class="w-full rounded-xl border-secondary/20 focus:ring-accent" id="cust-address"
+                        placeholder="المنطقة، الشارع، رقم العمارة" required="" rows="3"></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-1">طريقة الاستلام</label>
+                    <select class="w-full rounded-xl border-secondary/20 focus:ring-accent" id="delivery-type">
+                        <option value="delivery">توصيل للمنزل (+20 ج.م خدمة)</option>
+                        <option value="pickup">استلام من الفرع (مجاناً)</option>
+                    </select>
+                </div>
+                <div class="pt-4 border-t border-secondary/10">
+                    <button
+                        class="w-full bg-green-600 text-white py-4 rounded-2xl font-bold shadow-xl active:scale-95 transition-transform flex items-center justify-center gap-3"
+                        type="submit">
+                        <svg fill="currentColor" height="24" viewbox="0 0 16 16" width="24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93a7.898 7.898 0 0 0-2.327-5.607zM7.994 14.52a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z">
+                            </path>
+                        </svg>
+                        تأكيد الطلب عبر واتساب
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- END: CheckoutModal -->
+    <script data-purpose="cart-logic">
+        let cart = [];
+        let currentProduct = null;
+
+        function toggleCart() {
+            const sideCart = document.getElementById('side-cart');
+            const overlay = document.getElementById('cart-overlay');
+            sideCart.classList.toggle('translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        function openModal(name, price) {
+            currentProduct = { name, basePrice: price };
+            document.getElementById('modal-title').innerText = name;
+            document.getElementById('modal-price').innerText = price + ' ج.م';
+            document.getElementById('product-modal').classList.remove('hidden');
+            document.getElementById('product-modal').classList.add('flex');
+        }
+
+        function closeModal() {
+            document.getElementById('product-modal').classList.add('hidden');
+            document.getElementById('product-modal').classList.remove('flex');
+        }
+
+        function addToCartDirect(name, price) {
+            const cartItem = {
+                id: Date.now(),
+                name: name,
+                size: '-',
+                addons: [],
+                price: price
+            };
+            cart.push(cartItem);
+            updateCartUI();
+            // Open cart to show the addition
+            const sideCart = document.getElementById('side-cart');
+            const overlay = document.getElementById('cart-overlay');
+            sideCart.classList.remove('translate-x-full');
+            overlay.classList.remove('hidden');
+        }
+
+        // Modal Price Update Logic
+        const modal = document.getElementById('product-modal');
+        modal.addEventListener('change', () => {
+            if (!currentProduct) return;
+            let total = currentProduct.basePrice;
+            const sizeAddon = parseInt(document.querySelector('input[name="size"]:checked').value);
+            const checkboxes = document.querySelectorAll('input[name="addon"]:checked');
+
+            total += sizeAddon;
+            checkboxes.forEach(cb => total += parseInt(cb.value));
+
+            document.getElementById('modal-price').innerText = total + ' ج.م';
+        });
+
+        document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+            let finalPrice = currentProduct.basePrice;
+            const sizeVal = parseInt(document.querySelector('input[name="size"]:checked').value);
+            const sizeLabel = sizeVal > 0 ? 'كبير' : 'وسط';
+            finalPrice += sizeVal;
+
+            let addons = [];
+            document.querySelectorAll('input[name="addon"]:checked').forEach(cb => {
+                finalPrice += parseInt(cb.value);
+                addons.push(cb.getAttribute('data-name'));
+            });
+
+            const cartItem = {
+                id: Date.now(),
+                name: currentProduct.name,
+                size: sizeLabel,
+                addons: addons,
+                price: finalPrice
+            };
+
+            cart.push(cartItem);
+            updateCartUI();
+            closeModal();
+
+            // Reset form
+            document.querySelectorAll('input[name="addon"]').forEach(cb => cb.checked = false);
+            document.querySelector('input[name="size"][value="0"]').checked = true;
+        });
+
+        function updateCartUI() {
+            const list = document.getElementById('cart-items');
+            const badge = document.getElementById('cart-badge');
+            const floatBadge = document.getElementById('cart-count-float');
+            const totalEl = document.getElementById('cart-total');
+
+            if (cart.length === 0) {
+                list.innerHTML = `<div class="text-center py-20 text-gray-400"><p>السلة فارغة حالياً</p></div>`;
+                badge.classList.add('hidden');
+                floatBadge.innerText = '0';
+                totalEl.innerText = '0 ج.م';
+                return;
+            }
+
+            badge.classList.remove('hidden');
+            badge.innerText = cart.length;
+            floatBadge.innerText = cart.length;
+
+            let total = 0;
+            list.innerHTML = cart.map(item => {
+                total += item.price;
+                return `
+          <div class="flex justify-between items-center bg-gray-50 p-3 rounded-xl border border-secondary/10">
+            <div>
+              <h5 class="font-bold text-sm">${item.name}</h5>
+              <p class="text-[10px] text-gray-500">${item.size} ${item.addons.length ? '+ ' + item.addons.join(', ') : ''}</p>
+              <span class="text-accent text-sm font-bold">${item.price} ج.م</span>
+            </div>
+            <button onclick="removeItem(${item.id})" class="text-red-400 p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+              </svg>
+            </button>
+          </div>
+        `;
+            }).join('');
+            totalEl.innerText = total + ' ج.م';
+        }
+
+        function removeItem(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        function showCheckout() {
+            if (cart.length === 0) return alert('السلة فارغة!');
+            document.getElementById('checkout-modal').classList.remove('hidden');
+            document.getElementById('checkout-modal').classList.add('flex');
+        }
+
+        function closeCheckout() {
+            document.getElementById('checkout-modal').classList.add('hidden');
+            document.getElementById('checkout-modal').classList.remove('flex');
+        }
+
+        document.getElementById('order-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('cust-name').value;
+            const phone = document.getElementById('cust-phone').value;
+            const address = document.getElementById('cust-address').value;
+            const type = document.getElementById('delivery-type').value;
+
+            let deliveryFee = type === 'delivery' ? 20 : 0;
+            let itemsText = cart.map(i => `- ${i.name} (${i.size}) ${i.addons.length ? '[' + i.addons.join(',') + ']' : ''} : ${i.price} ج.م`).join('%0A');
+            let total = cart.reduce((acc, curr) => acc + curr.price, 0) + deliveryFee;
+
+            let message = `*طلب جديد ل كوكب السعادة*%0A%0A`;
+            message += `*الاسم:* ${name}%0A`;
+            message += `*الهاتف:* ${phone}%0A`;
+            message += `*العنوان:* ${address}%0A`;
+            message += `*الاستلام:* ${type === 'delivery' ? 'توصيل للمنزل' : 'من الفرع'}%0A%0A`;
+            message += `*الطلبات:*%0A${itemsText}%0A%0A`;
+            message += `*خدمة التوصيل:* ${deliveryFee} ج.م%0A`;
+            message += `*الإجمالي النهائي:* ${total} ج.م`;
+
+            const whatsappUrl = `https://wa.me/201552627211?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        });
+
+        // Sticky Tabs Logic
+        window.addEventListener('scroll', () => {
+            const tabs = document.getElementById('sticky-tabs');
+            if (window.scrollY > 400) {
+                tabs.classList.remove('hidden');
+            } else {
+                tabs.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>
