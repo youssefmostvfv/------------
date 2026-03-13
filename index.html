@@ -97,16 +97,21 @@
     </header>
     <!-- END: MainHeader -->
     <!-- BEGIN: HeroSection -->
-    <section class="relative min-h-[400px] md:h-[500px] lg:h-[600px] h-[70vh] flex items-center justify-center text-center px-6 overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center z-0 scale-105 transition-transform duration-[20s] ease-linear hover:scale-110"
-            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBSBBmPmzC3pucQB1WBt5tYG5O0xWgwjIvUcBE48D16OkOfuEVs91NUFMBW9dDJgP8JHdqZWbVEX-_753JGd6L8nYCJSAYuQAompBjV6ncaWclT-jcohGk_o2K_mwlz_BfdKpZL84H0ksBzBblnbJmHHWNDcnd2WaHUvuDbphgnQSV6vlYnOyw1WOOGjy4Ek5Lblp4ootls5-QJk_i-zyt3X_DRwAA3wq3jmisZhxztVfOAF_E0F_P_AAwfEWj1SAR4XlkbV2v0ZQ');">
+    <section
+        class="relative min-h-[400px] md:h-[500px] lg:h-[600px] h-[70vh] flex items-center justify-center text-center px-6 overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center z-0 opacity-50"
+            style="background-image: url('kawkap-logo.webp'); background-repeat: no-repeat; background-size: contain; background-position: center;">
         </div>
-        <div class="absolute inset-0 bg-darkBrown/40 backdrop-blur-[2px] z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-darkBrown/60 via-darkBrown/20 to-warmBackground z-10 "></div>
         <div class="relative z-20 w-full max-w-lg animate-slide-up">
-            <span class="bg-accent text-white px-4 py-2 rounded-full text-sm font-bold mb-4 inline-block shadow-lg">أصل الوافل</span>
-            <h2 class="text-white font-cairo text-4xl md:text-6xl font-black mb-4 drop-shadow-xl block md:hidden">اكتشف سعادة مذاقنا</h2>
-            <h2 class="text-white font-cairo text-4xl md:text-6xl font-black mb-4 drop-shadow-xl hidden md:block">أفضل الحلويات الطازجة</h2>
-            <p class="text-white/90 text-sm md:text-lg mb-8 max-w-md mx-auto drop-shadow-md">نقدم لك تجربة فريدة مع أجود أنواع الحلويات والوافل المصنوع بكل حب لتستمتع بكل لحظة</p>
+            <span class="bg-accent text-white px-4 py-2 rounded-full text-sm font-bold mb-4 inline-block shadow-lg">أصل
+                الوافل</span>
+            <h2 class="text-white font-cairo text-4xl md:text-6xl font-black mb-4 drop-shadow-xl block md:hidden">اكتشف
+                سعادة مذاقنا</h2>
+            <h2 class="text-white font-cairo text-4xl md:text-6xl font-black mb-4 drop-shadow-xl hidden md:block">أفضل
+                الحلويات الطازجة</h2>
+            <p class="text-white/90 text-sm md:text-lg mb-8 max-w-md mx-auto drop-shadow-md">نقدم لك تجربة فريدة مع أجود
+                أنواع الحلويات والوافل المصنوع بكل حب لتستمتع بكل لحظة</p>
             <div class="relative mb-6">
                 <input
                     class="w-full py-4 px-6 pr-12 rounded-2xl border-none shadow-xl focus:ring-2 focus:ring-accent text-sm"
@@ -571,35 +576,7 @@
         </section>
         <!-- END: RicePuddingSection -->
 
-        <!-- BEGIN: ExtraSauceSection -->
-        <section class="mb-10 animate-slide-up" id="extra-sauce" style="animation-delay: 1.0s;">
-            <div class="px-4 flex justify-between items-end mb-4">
-                <h3 class="font-cairo text-2xl font-bold border-r-4 border-accent pr-3 text-primary">اكسترا صوص</h3>
-                <span class="text-[10px] text-gray-400">5 أصناف</span>
-            </div>
-            <div class="flex overflow-x-auto no-scrollbar px-4 gap-4 pb-4">
-                <script>
-                    const extraSauces = [
-                        { name: 'كراميل', price: 10 },
-                        { name: 'شوكولاته', price: 10 },
-                        { name: 'شوكليت وايت', price: 10 },
-                        { name: 'بستاشيو', price: 10 },
-                        { name: 'فراوله', price: 10 }
-                    ];
-                    document.write(extraSauces.map(item => `
-  <div class="min-w-[120px] bg-white rounded-2xl p-3 shadow-sm border border-secondary/5 text-center group active:scale-95 transition-transform flex-shrink-0">
-    <h4 class="font-bold text-[10px] mb-2">${item.name}</h4>
-    <div class="flex justify-between items-center bg-warmBackground p-1 rounded-lg">
-      <span class="text-accent font-bold text-[10px]">${item.price} ج.م</span>
-      <button class="bg-primary text-white w-5 h-5 rounded flex items-center justify-center" onclick="addToCartDirect('${item.name}', ${item.price})">
-        <svg class="h-3 w-3" fill="currentColor" viewbox="0 0 20 20"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"></path></svg>
-      </button>
-    </div>
-  </div>
-`).join(''));
-                </script>
-            </div>
-        </section>
+
         <!-- END: ExtraSauceSection -->
     </main>
     <!-- BEGIN: FloatingCartButton -->
@@ -665,39 +642,39 @@
             <div class="p-6">
                 <h3 class="font-cairo text-2xl font-bold text-primary mb-2" id="modal-title">اسم المنتج</h3>
                 <p class="text-sm text-gray-500 mb-6">اختر الإضافات المفضلة لديك</p>
-                    <!-- Extras Section (First) -->
-                    <div>
-                        <span class="block text-sm font-bold mb-3">إضافات الفواكه: (تمرير أفقي)</span>
-                        <div class="flex gap-3 overflow-x-auto no-scrollbar pb-2">
-                            <script>
-                                const fruitExtras = [
-                                    { name: 'كيوي', price: 10 }, { name: 'فراولة', price: 10 }, { name: 'اوريو', price: 10 },
-                                    { name: 'بوريو', price: 10 }, { name: 'هوهوز', price: 10 }, { name: 'سنيكرز', price: 10 },
-                                    { name: 'جلاكسي', price: 10 }, { name: 'كيت كات', price: 10 }, { name: 'مورو', price: 10 },
-                                    { name: 'مندولين', price: 10 }, { name: 'توينكيز', price: 10 }, { name: 'مانجا', price: 10 },
-                                    { name: 'موز', price: 10 }, { name: 'تفاح', price: 10 }, { name: 'كريز', price: 10 },
-                                    { name: 'مارشميلو', price: 10 }
-                                ];
-                                document.write(fruitExtras.map(ex => `
+                <!-- Extras Section (First) -->
+                <div>
+                    <span class="block text-sm font-bold mb-3">إضافات الفواكه: (تمرير أفقي)</span>
+                    <div class="flex gap-3 overflow-x-auto no-scrollbar pb-2">
+                        <script>
+                            const fruitExtras = [
+                                { name: 'كيوي', price: 10 }, { name: 'فراولة', price: 10 }, { name: 'اوريو', price: 10 },
+                                { name: 'بوريو', price: 10 }, { name: 'هوهوز', price: 10 }, { name: 'سنيكرز', price: 10 },
+                                { name: 'جلاكسي', price: 10 }, { name: 'كيت كات', price: 10 }, { name: 'مورو', price: 10 },
+                                { name: 'مندولين', price: 10 }, { name: 'توينكيز', price: 10 }, { name: 'مانجا', price: 10 },
+                                { name: 'موز', price: 10 }, { name: 'تفاح', price: 10 }, { name: 'كريز', price: 10 },
+                                { name: 'مارشميلو', price: 10 }
+                            ];
+                            document.write(fruitExtras.map(ex => `
                                     <label class="min-w-[80px] flex flex-col items-center gap-1 p-2 border border-secondary/10 rounded-xl cursor-pointer peer-checked:bg-accent/5 transition-all has-[:checked]:border-accent has-[:checked]:bg-accent/5">
                                         <input type="checkbox" name="addon" value="${ex.price}" data-name="${ex.name}" class="hidden">
                                         <span class="text-[10px] font-bold text-center">${ex.name}</span>
                                         <span class="text-[8px] text-accent">+${ex.price}ج</span>
                                     </label>
                                 `).join(''));
-                            </script>
-                        </div>
+                        </script>
                     </div>
-                    <div>
-                        <span class="block text-sm font-bold mb-3">إضافات الصوص:</span>
-                        <div class="grid grid-cols-2 gap-2">
-                            <script>
-                                const sauceExtras = [
-                                    { name: 'شوكليت', price: 10 }, { name: 'وايت', price: 10 }, { name: 'كراميل', price: 10 },
-                                    { name: 'لوتس', price: 10 }, { name: 'بستاشيو', price: 10 }, { name: 'فراوله', price: 10 },
-                                    { name: 'مانجو', price: 10 }
-                                ];
-                                document.write(sauceExtras.map(ex => `
+                </div>
+                <div>
+                    <span class="block text-sm font-bold mb-3">إضافات الصوص:</span>
+                    <div class="grid grid-cols-2 gap-2">
+                        <script>
+                            const sauceExtras = [
+                                { name: 'شوكليت', price: 10 }, { name: 'وايت', price: 10 }, { name: 'كراميل', price: 10 },
+                                { name: 'لوتس', price: 10 }, { name: 'بستاشيو', price: 10 }, { name: 'فراوله', price: 10 },
+                                { name: 'مانجو', price: 10 }
+                            ];
+                            document.write(sauceExtras.map(ex => `
                                     <label class="flex items-center justify-between p-3 border border-secondary/10 rounded-xl cursor-pointer has-[:checked]:border-accent has-[:checked]:bg-accent/5">
                                         <span class="text-xs font-bold">${ex.name}</span>
                                         <div class="flex items-center gap-2">
@@ -706,23 +683,27 @@
                                         </div>
                                     </label>
                                 `).join(''));
-                            </script>
-                        </div>
+                        </script>
                     </div>
-                    <!-- Size Section (Second) -->
-                    <div class="pt-4 border-t border-secondary/10">
-                        <span class="block text-sm font-bold mb-3">الحجم:</span>
-                        <div class="flex gap-3">
-                            <label class="flex-1">
-                                <input checked="" class="hidden peer" name="size" type="radio" value="0" />
-                                <div class="text-center py-2 border-2 border-secondary/20 rounded-xl peer-checked:border-accent peer-checked:bg-accent/5 transition-all text-sm font-bold">وسط</div>
-                            </label>
-                            <label class="flex-1">
-                                <input class="hidden peer" name="size" type="radio" value="15" />
-                                <div class="text-center py-2 border-2 border-secondary/20 rounded-xl peer-checked:border-accent peer-checked:bg-accent/5 transition-all text-sm font-bold">كبير (+15)</div>
-                            </label>
-                        </div>
+                </div>
+                <!-- Size Section (Second) -->
+                <div class="pt-4 border-t border-secondary/10">
+                    <span class="block text-sm font-bold mb-3">الحجم:</span>
+                    <div class="flex gap-3">
+                        <label class="flex-1">
+                            <input checked="" class="hidden peer" name="size" type="radio" value="0" />
+                            <div
+                                class="text-center py-2 border-2 border-secondary/20 rounded-xl peer-checked:border-accent peer-checked:bg-accent/5 transition-all text-sm font-bold">
+                                وسط</div>
+                        </label>
+                        <label class="flex-1">
+                            <input class="hidden peer" name="size" type="radio" value="15" />
+                            <div
+                                class="text-center py-2 border-2 border-secondary/20 rounded-xl peer-checked:border-accent peer-checked:bg-accent/5 transition-all text-sm font-bold">
+                                كبير (+15)</div>
+                        </label>
                     </div>
+                </div>
                 <button
                     class="w-full bg-primary text-white py-4 rounded-2xl font-bold mt-8 shadow-xl active:scale-95 transition-transform flex justify-between px-6"
                     id="add-to-cart-btn">
@@ -794,9 +775,13 @@
                 </svg>
             </button>
             <div class="flex-1 relative">
-                <input type="text" id="global-search-input" class="w-full py-3 px-4 pr-10 rounded-xl border-secondary/20 focus:ring-accent text-lg" placeholder="ابحث عن الوافل، الطواجن..." oninput="handleGlobalSearch(this.value)">
-                <svg class="w-6 h-6 absolute right-3 top-1/2 -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                <input type="text" id="global-search-input"
+                    class="w-full py-3 px-4 pr-10 rounded-xl border-secondary/20 focus:ring-accent text-lg"
+                    placeholder="ابحث عن الوافل، الطواجن..." oninput="handleGlobalSearch(this.value)">
+                <svg class="w-6 h-6 absolute right-3 top-1/2 -translate-y-1/2 text-gray-400" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
             </div>
         </div>
